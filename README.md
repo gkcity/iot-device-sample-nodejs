@@ -1,1 +1,2 @@
-# iot-device-sample-nodejs
+# xiot-core-xcp-node-sample-ts
+xcp samples
