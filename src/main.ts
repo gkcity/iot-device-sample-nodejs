@@ -8,13 +8,13 @@ const productId = 16;
 const productVersion = 1;
 const deviceLTPK = 'VH8lCVErI4MIJsOaze5QhyWa2hhpp7I8L5gdToxUeeE=';
 const deviceLTSK = 'uwh6DtyfcBqs/TLyNkTHXg8yl56rq09943KoyfxltAw=';
-const serverKey = '/8meBcfecxNl7pMIO0Zxbhx70A4DSGio7C2H7VzZLB8=';
+const serverLTPK = '/8meBcfecxNl7pMIO0Zxbhx70A4DSGio7C2H7VzZLB8=';
 
 /**
  * init iot service
  */
 console.log('initialize iot.service ...');
-const iot = new IotService(serialNumber, productId, productVersion, deviceLTPK, deviceLTSK, serverKey);
+const iot = new IotService(serialNumber, productId, productVersion, deviceLTPK, deviceLTSK, serverLTPK);
 
 /**
  * connect to service

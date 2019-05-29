@@ -54,7 +54,7 @@ export class IotService {
               productVersion: number,
               deviceLTPK: string,
               deviceLTSK: string,
-              serviceKey: string) {
+              serverLTPK: string) {
     console.log('IotService.initialize');
 
     // if (! this.uninitialized()) {
@@ -63,9 +63,8 @@ export class IotService {
     // }
 
     this.status = IotStatus.INITIALIZING;
-    const serverLTPK = Convert.base642bin(serviceKey);
     const getter = new IotLtskGetterImpl(deviceLTPK, deviceLTSK);
-    const cipher = new XcpClientCipherProductImpl(productId, productVersion, getter, serverLTPK);
+    const cipher = new XcpClientCipherProductImpl(productId, productVersion, getter, Convert.base642bin(serverLTPK));
     const codec = XcpFrameCodecType.NOT_CRYPT;
     this.client = new XcpClientImpl(serialNumber, productId, productVersion, cipher, codec);
     this.client.addQueryHandler(GET_PROPERTIES_METHOD, (query) => this.getProperties(query));
