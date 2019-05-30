@@ -37,7 +37,7 @@ import {getProperty} from '../device/on.property.get';
 import {setProperty} from '../device/on.property.set';
 import {invokeAction} from '../device/on.action.invoke';
 
-export class IotService {
+export class IotRuntime {
 
   // device: DeviceOperable;
   status: IotStatus = IotStatus.UNINITIALIZED;
@@ -55,7 +55,7 @@ export class IotService {
               deviceLTPK: string,
               deviceLTSK: string,
               serverLTPK: string) {
-    console.log('IotService.initialize');
+    console.log('IotRuntime.initialize');
 
     // if (! this.uninitialized()) {
     //   this.disconnect();

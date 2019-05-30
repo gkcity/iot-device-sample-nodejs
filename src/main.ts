@@ -1,4 +1,4 @@
-import {IotService} from './iot/iot.service';
+import {IotRuntime} from './iot/iot.runtime';
 
 /**
  * init device information
@@ -11,10 +11,10 @@ const deviceLTSK = 'uwh6DtyfcBqs/TLyNkTHXg8yl56rq09943KoyfxltAw=';
 const serverLTPK = '/8meBcfecxNl7pMIO0Zxbhx70A4DSGio7C2H7VzZLB8=';
 
 /**
- * init iot service
+ * init iot runtime
  */
 console.log('initialize iot.service ...');
-const iot = new IotService(serialNumber, productId, productVersion, deviceLTPK, deviceLTSK, serverLTPK);
+const iot = new IotRuntime(serialNumber, productId, productVersion, deviceLTPK, deviceLTSK, serverLTPK);
 
 /**
  * connect to service
