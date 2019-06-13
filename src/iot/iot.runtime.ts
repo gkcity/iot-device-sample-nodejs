@@ -21,7 +21,6 @@ import {
 import {
   OperationStatus,
   DeviceCodec,
-  DeviceOperable,
   PropertyOperation,
   EventOperation,
   PID,
@@ -39,7 +38,6 @@ import {invokeAction} from '../device/on.action.invoke';
 
 export class IotRuntime {
 
-  // device: DeviceOperable;
   status: IotStatus = IotStatus.UNINITIALIZED;
 
   private client: XcpClient;
