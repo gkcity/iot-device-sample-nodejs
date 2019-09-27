@@ -1,4 +1,5 @@
 import {IotRuntime} from './iot/iot.runtime';
+const qrcode = require('qrcode-terminal');
 
 /**
  * init device information
@@ -27,6 +28,11 @@ iot.connect(host, port, uri)
         console.log('connect ok');
         iot.getAccessKey().then(key => {
             console.log('getAccessKey: ', key);
+            const code = {
+                id: serialNumber + '@' + productId + '/' + productVersion,
+                key: key,
+            };
+            qrcode.generate(JSON.stringify(code));
         });
     })
     .catch(e => console.log('connect failed!'));
