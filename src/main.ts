@@ -1,4 +1,5 @@
 import {IotRuntime} from './iot/iot.runtime';
+import {Md5} from 'ts-md5/dist/md5';
 const qrcode = require('qrcode-terminal');
 
 /**
@@ -30,8 +31,9 @@ iot.connect(host, port, uri)
             console.log('getAccessKey: ', key);
             const code = {
                 id: serialNumber + '@' + productId + '/' + productVersion,
-                key: key,
+                key: Md5.hashStr(key),
             };
+            console.log('QR-CODE: ', code);
             qrcode.generate(JSON.stringify(code));
         });
     })
